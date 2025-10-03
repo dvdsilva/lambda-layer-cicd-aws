@@ -1,5 +1,9 @@
 # https://docs.aws.amazon.com/pt_br/lambda/latest/dg/nodejs-layers.html
 version: 0.2
+env:
+  variables:
+    LAMBDA_LAYER_NAME: "lambda-cicd-layer"
+    LAMBDA_LAYER_RUNTIME: "nodejs22.x"
 phases:
   pre_build:
     commands:
