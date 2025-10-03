@@ -1,6 +1,6 @@
 
 /**
- * Calcula a multiplicaçã de dois numeros
+ * Calcula a multiplicaçã de dois numeros com mais de um parametro
  * @param {*} x1 
  * @param {*} x2 
  * @returns 

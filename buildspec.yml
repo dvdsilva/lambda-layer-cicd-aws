@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     LAMBDA_LAYER_NAME: "lambda-cicd-layer"
-    LAMBDA_LAYER_RUNTIME: "nodejs22.x"
+    LAMBDA_LAYER_RUNTIME: "nodejs22.x" 
 phases:
   pre_build:
     commands:
