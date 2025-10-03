@@ -1,0 +1,17 @@
+# https://docs.aws.amazon.com/pt_br/lambda/latest/dg/nodejs-layers.html
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo "Criando diretórios da layer"
+      - mkdir nodejs
+
+      - echo "copiando os arquivos a serem disponibilizados na layer"
+      - cp calculadora.mjs ./nodejs/calculadora.mjs
+
+      - echo "Empacota os arquivo da layer em arquivo zip"
+      - zip -r lambda-layer-content.zip ./nodejs
+  build:
+    commands:
+      - echo "Publicando nova versão da layer"
+      - aws lambda publish-layer-version --layer-name $LAMBDA_LAYER_NAME --zip-file fileb://lambda-layer-content.zip --compatible-runtimes $LAMBDA_LAYER_RUNTIME --compatible-architectures "x86_64"
