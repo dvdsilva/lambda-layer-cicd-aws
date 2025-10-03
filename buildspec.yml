@@ -8,7 +8,7 @@ phases:
   pre_build:
     commands:
       - echo "Criando diretórios da layer"
-      - mkdir nodejs
+      - mkdir -p nodejs
 
       - echo "copiando os arquivos a serem disponibilizados na layer"
       - cp calculadora.mjs ./nodejs/calculadora.mjs
